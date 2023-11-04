@@ -32,10 +32,10 @@ void pnp_rt(Point2f ps[4])
     Mat img = imread("../1_raw.png");
 
     vector<Point3f>objPts;//3D点坐标。以灯条的尺寸，单位mm
-    objPts.push_back(Point3f( -25.0f, 142.5f, 0));
-    objPts.push_back(Point3f(25.0f, 142.5f, 0));
-    objPts.push_back(Point3f(25.0f,-142.5f,0));
-    objPts.push_back(Point3f(-25.0f,-142.5f, 0));
+    objPts.push_back(Point3f( -2.5f, 30.0f, 0));
+    objPts.push_back(Point3f(2.5f, 30.0f, 0));
+    objPts.push_back(Point3f(2.5f,-30.0f,0));
+    objPts.push_back(Point3f(-2.5f,-30.0f, 0));
     vector<Point2f>imgPts ;	//2D点坐标，即图像上点的坐标
     imgPts.push_back(Point2f(ps[0].x, ps[0].y));
     imgPts.push_back(Point2f(ps[1].x, ps[1].y));
