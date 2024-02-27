@@ -23,6 +23,8 @@ class ResidualBlock(nn.Module):
                 nn.Conv2d(in_channels, out_channels, kernel_size=1, stride=stride, bias=False),
                 nn.BatchNorm2d(out_channels)
             )
+        else:
+            self.downsample = nn.Identity()  # 如果维度相同且不需要下采样，则使用Identity作为skip connection
     #前向传播过程
     def forward(self, x):
         residual = x
@@ -69,7 +71,8 @@ class ResNet_CNN(nn.Module):
         layers.append(ResidualBlock(self.in_channels, out_channels, stride))
         self.in_channels = out_channels
         for _ in range(1, blocks):
-            layers.append(ResidualBlock(out_channels, out_channels))
+            layers.append(ResidualBlock(out_channels, out_channels)) # 逐层增加通道数
+            layers.append(nn.BatchNorm2d(out_channels))  # 在每个残差块后添加BatchNorm2d层
         return nn.Sequential(*layers)
 
     #前向传播过程

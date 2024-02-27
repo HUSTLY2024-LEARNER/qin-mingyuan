@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 epochs = 10 #训练轮数
 batch_size_train = 64   #训练集批量大小
 batch_size_test = 1000  #测试集批量大小
-learning_rate = 0.008    #学习率，即步长
+learning_rate = 0.001    #学习率，即步长
 log_interval = 10   #每隔多少个batch打印训练日志
 random_seed = 1     # 随机种子
 torch.manual_seed(random_seed)  #设置随机种子
