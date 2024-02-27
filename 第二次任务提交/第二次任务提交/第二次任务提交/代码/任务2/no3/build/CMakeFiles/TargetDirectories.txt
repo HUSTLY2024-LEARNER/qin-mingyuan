@@ -1,0 +1,3 @@
+/home/qmy/task2/no3/build/CMakeFiles/main.dir
+/home/qmy/task2/no3/build/CMakeFiles/edit_cache.dir
+/home/qmy/task2/no3/build/CMakeFiles/rebuild_cache.dir
